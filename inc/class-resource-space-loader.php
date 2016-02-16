@@ -41,6 +41,7 @@ class Resource_Space_Loader {
 			'prettyfieldnames' => false,
 			'original'         => true,
 			'previewsize'      => 'scr',
+			'metadata'         => true,
 		) );
 
 		$url          = add_query_arg( $args, PJ_RESOURCE_SPACE_DOMAIN . '/plugins/api_search/' );
@@ -65,6 +66,15 @@ class Resource_Space_Loader {
 
 		// Request original URL.
 		$attachment_id = wpcom_vip_download_image( $data[0]->preview );
+
+		// Update post to show proper values in wp attachment views
+		$post = array(
+			'ID' => $attachment_id,
+			'post_title' => $data[0]->field8, // Title in Resourcespace
+			'post_excerpt' => $data[0]->field18 // Caption in Resourcespace
+		);
+
+		wp_update_post( $post );
 
 		// Update Metadata.
 		update_post_meta( $attachment_id, 'resource_space', 1 );

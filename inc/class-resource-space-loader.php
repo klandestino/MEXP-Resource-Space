@@ -69,6 +69,9 @@ class Resource_Space_Loader {
 		// Update Metadata.
 		update_post_meta( $attachment_id, 'resource_space', 1 );
 
+		// Metadata for connecting resource between Wp and RS
+		update_post_meta( $attachment_id, 'resource_external_id', $data[0]->ref );
+
 		// Allow plugins to hook in here.
 		do_action( 'resourcespace_import_complete', $attachment_id, $data[0] );
 

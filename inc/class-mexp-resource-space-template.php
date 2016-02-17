@@ -24,7 +24,7 @@ class MEXP_Resource_Space_Template extends MEXP_Template {
 						{{ data.content }}
 					</div>
 					<div class="mexp-item-date">
-						{{ data.date }}
+						<span class="uploaded-date"><?php _e( 'Uploaded date:', 'resourcespace-explorer' ); ?></span> {{ data.date }}
 					</div>
 				</div>
 

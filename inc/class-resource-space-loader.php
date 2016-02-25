@@ -70,8 +70,8 @@ class Resource_Space_Loader {
 		// Update post to show proper values in wp attachment views
 		$post = array(
 			'ID' => $attachment_id,
-			'post_title' => $data[0]->field8, // Title in Resourcespace
-			'post_excerpt' => $data[0]->field18 // Caption in Resourcespace
+			'post_title' => isset( $data[0]->field8 ) ? $data[0]->field8 : '', // Title in Resourcespace
+			'post_excerpt' => isset( $data[0]->field18 ) ? $data[0]->field18 : '' // Caption in Resourcespace
 		);
 
 		wp_update_post( $post );

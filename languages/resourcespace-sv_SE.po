@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: resourcespace explorer\n"
 "POT-Creation-Date: 2016-02-26 11:40+0100\n"
-"PO-Revision-Date: 2016-02-26 11:42+0100\n"
+"PO-Revision-Date: 2016-02-26 13:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -33,7 +33,7 @@ msgstr "Importera från Bildbanken"
 
 #: inc/class-mexp-resource-space-template.php:27
 msgid "Uploaded date:"
-msgstr ""
+msgstr "Uppladdat:"
 
 #: inc/class-mexp-resource-space-template.php:34
 msgid "Deselect"

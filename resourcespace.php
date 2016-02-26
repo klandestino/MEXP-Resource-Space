@@ -15,6 +15,13 @@ defined( 'PJ_RESOURCE_SPACE_PLUGIN_DIR' ) OR define( 'PJ_RESOURCE_SPACE_PLUGIN_D
 defined( 'PJ_RESOURCE_SPACE_PLUGIN_URL' ) OR define( 'PJ_RESOURCE_SPACE_PLUGIN_URL', untrailingslashit( plugin_dir_url( __FILE__ ) ) );
 defined( 'PJ_RESOURCE_SPACE_RESULTS_PER_PAGE' ) or define( 'PJ_RESOURCE_SPACE_RESULTS_PER_PAGE', 10 );
 
+add_action( 'plugins_loaded', function() {
+
+	load_plugin_textdomain( 'resourcespace', false, plugin_basename( dirname( __FILE__ ) ) . '/languages/' );
+
+} );
+
+
 add_action( 'init', function() {
 
 	if ( ! class_exists( 'MEXP_Service' ) ) {
@@ -49,6 +56,7 @@ add_filter( 'mexp_services', function( array $services ) {
 	return $services;
 
 } );
+
 
 /**
  * Enqueue Visual Composer modification scripts if plugin is active.

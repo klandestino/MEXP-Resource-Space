@@ -27,3 +27,4 @@ define( 'PJ_RESOURCE_SPACE_RESULTS_PER_PAGE', 20 );
 **Grant access by user role**
 
 The plugin uses the `insert_from_resourcespace` capability. This is granted to administrators and editors by default.
+

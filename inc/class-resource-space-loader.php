@@ -33,6 +33,7 @@ class Resource_Space_Loader {
 
 		if ( empty( $resource_id ) ) {
 			wp_send_json_error( esc_html__( 'Empty resource id', 'resourcespace' ) );
+			add_filter( 'http_request_host_is_external', '__return_true' );
 		}
 
 		$args = array_map( 'rawurlencode', array(

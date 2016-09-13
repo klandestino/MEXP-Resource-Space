@@ -82,7 +82,7 @@ class MEXP_Resource_Space_Service extends MEXP_Service {
 		foreach ( (array) $response_data->resources as $resource ) {
 
 			$dirty_data = array(
-				'title'       => basename( $resource->file_path ),
+				'title'       => $resource->field8,
 				'date'        => strtotime( $resource->creation_date ),
 				'id'          => $resource->ref,
 				'thumbnail'   => $resource->preview,

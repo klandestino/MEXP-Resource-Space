@@ -33,6 +33,7 @@ class Resource_Space_Loader {
 
 		if ( empty( $resource_id ) ) {
 			wp_send_json_error( esc_html__( 'Empty resource id', 'resourcespace' ) );
+			add_filter( 'http_request_host_is_external', '__return_true' );
 		}
 
 		$args = array_map( 'rawurlencode', array(
@@ -75,8 +76,20 @@ class Resource_Space_Loader {
 		);
 		wp_update_post( $postarr );
 
+		// Update post to show proper values in wp attachment views
+		$post = array(
+			'ID' => $attachment_id,
+			'post_title' => isset( $data[0]->field8 ) ? $data[0]->field8 : '', // Title in Resourcespace
+			'post_excerpt' => isset( $data[0]->field18 ) ? $data[0]->field18 : '' // Caption in Resourcespace
+		);
+
+		wp_update_post( $post );
+
 		// Update Metadata.
 		update_post_meta( $attachment_id, 'resource_space', 1 );
+
+		// Metadata for connecting resource between Wp and RS
+		update_post_meta( $attachment_id, 'resource_external_id', $data[0]->ref );
 
 		// Allow plugins to hook in here.
 		do_action( 'resourcespace_import_complete', $attachment_id, $data[0] );

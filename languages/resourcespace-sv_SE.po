@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: resourcespace explorer\n"
+"POT-Creation-Date: 2016-02-26 11:40+0100\n"
+"PO-Revision-Date: 2016-02-26 13:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n;esc_html__;esc_html_e;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc/class-mexp-resource-space-service.php:137
+msgid "All"
+msgstr "Alla"
+
+#: inc/class-mexp-resource-space-service.php:152
+msgid "Insert Image"
+msgstr "Lägg till bild"
+
+#: inc/class-mexp-resource-space-service.php:153
+msgid "No images matched your search query."
+msgstr "Ingen bild kunde hittas för din sökning"
+
+#: inc/class-mexp-resource-space-service.php:154
+msgid "Insert Stock Photo"
+msgstr "Importera från Bildbanken"
+
+#: inc/class-mexp-resource-space-template.php:27
+msgid "Uploaded date:"
+msgstr "Uppladdat:"
+
+#: inc/class-mexp-resource-space-template.php:34
+msgid "Deselect"
+msgstr ""
+
+#: inc/class-mexp-resource-space-template.php:63
+msgid "Search photos"
+msgstr "Sök bilder"
+
+#: inc/class-mexp-resource-space-template.php:66
+msgid "Search"
+msgstr "Sök"
+
+#: inc/class-resource-space-admin.php:31
+msgid ""
+"You must define the resource space domain and API key in your wp-config.php. "
+"See readme for more details."
+msgstr ""
+
+#: inc/class-resource-space-admin.php:42 inc/class-resource-space-admin.php:43
+msgid "Stock Photos"
+msgstr "Bildbanken"
+
+#: inc/class-resource-space-loader.php:35
+msgid "Empty resource id"
+msgstr ""
+
+#: inc/class-resource-space-loader.php:60
+msgid "Unable to query API"
+msgstr ""
+
+#: inc/class-resource-space-loader.php:64
+msgid "Resource not found"
+msgstr "Inget dokument hittades"
+
+#: resourcespace.php:29
+msgid "Media Explorer plugin must be enabled."
+msgstr ""
+
+#: resourcespace.php:33
+msgid "You must define PJ_RESOURCE_SPACE_DOMAIN"
+msgstr ""
+
+#: resourcespace.php:37
+msgid "You must define PJ_RESOURCE_SPACE_KEY"
+msgstr ""
+
+#: resourcespace.php:80 templates/admin-page.php:8
+msgid "Stock Images"
+msgstr "Bildbanken"
+
+#: resourcespace.php:81
+msgid "Import"
+msgstr ""
+
+#: templates/admin-page.php:9
+msgid "Add new"
+msgstr "Lägg till ny"

@@ -17,6 +17,20 @@ define( 'PJ_RESOURCE_SPACE_AUTHL',  '' );
 define( 'PJ_RESOURCE_SPACE_AUTHP',  '' );
 ````
 
+You might have to allow external host to download content. Put the following in the `wp-config.php` file.
+
+````php
+/** Enable my local themes and plugins repository */
+add_filter( 'http_request_host_is_external', 'rs_allow_my_custom_host', 10, 3 );
+function rs_allow_my_custom_host( $allow, $host, $url ) {
+	if ( $host == 'your-domain.com' ) {
+		$allow = true;
+	}
+
+	return $allow;
+}
+````
+
 Further (optional) settings
 
 ````php

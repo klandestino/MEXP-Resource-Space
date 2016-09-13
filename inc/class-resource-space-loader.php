@@ -37,10 +37,11 @@ class Resource_Space_Loader {
 
 		$args = array_map( 'rawurlencode', array(
 			'key'              => PJ_RESOURCE_SPACE_KEY,
-			'search'           => $resource_id,
+			'search'           => '!list' . $resource_id,
 			'prettyfieldnames' => false,
 			'original'         => true,
-			'previewsize'      => 'scr',
+			'previewsize'      => 'pre',
+			'metadata'         => true,
 		) );
 
 		$url          = add_query_arg( $args, PJ_RESOURCE_SPACE_DOMAIN . '/plugins/api_search/' );
@@ -64,7 +65,15 @@ class Resource_Space_Loader {
 		}
 
 		// Request original URL.
-		$attachment_id = wpcom_vip_download_image( $data[0]->preview );
+		$attachment_id = wpcom_vip_download_image( $data[0]->original_link );
+
+		// Update the title to the actual title and content, not the filename
+		$postarr = array(
+			'ID' => $attachment_id,
+			'post_title' => $data[0]->field8,
+			'post_content' => $data[0]->field18,
+		);
+		wp_update_post( $postarr );
 
 		// Update Metadata.
 		update_post_meta( $attachment_id, 'resource_space', 1 );
